@@ -906,10 +906,11 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 .midia-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.midia-card:nth-child(even) { margin-top: 48px; }
+.midia-card:nth-child(even) { position: relative; top: 48px; }
 .midia-card {
   background: var(--bg-surface); border: 1px solid var(--border);
   border-radius: 14px; padding: 36px 32px; transition: all .2s;
+  display: flex; flex-direction: column; height: 100%; box-sizing: border-box;
 }
 .midia-card:hover { box-shadow: 0 8px 32px rgba(57,30,122,0.1); transform: translateY(-2px); }
 .midia-card-source {
@@ -923,7 +924,7 @@ img { display: block; max-width: 100%; }
 .midia-card-link {
   display: inline-flex; align-items: center; gap: 5px;
   font-size: 12px; font-weight: 700; color: var(--c-purple-mid);
-  margin-top: 16px;
+  margin-top: auto; padding-top: 16px;
 }
 
 /* ══════════════════════════════════════════
@@ -1237,7 +1238,7 @@ a, button, .product-tab, .banking-tab-btn, .footer-links a, .nav-links a {
   .midia-inner .carousel-nav { order: 2; }
   .midia-text-wrap { display: contents; }
   .midia-cta { order: 3; }
-  .midia-card:nth-child(even) { margin-top: 0; }
+  .midia-card:nth-child(even) { position: static; top: auto; }
 
   /* Footer Mobile */
   .footer-top { grid-template-columns: 1fr; gap: 32px; display: flex; flex-direction: column; }
